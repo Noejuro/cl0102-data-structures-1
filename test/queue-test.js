@@ -20,13 +20,14 @@ describe('Check Queue Methods: ', function(){
     })
 
     it('Check the Peek method using : assert.equal(value, value): ', function(){
+        newQueue.offer("Juárez");
         result = newQueue.peek();
         assert.deepEqual(result, 'Alejandro');
     })
 
     it('Check the Length method using : assert.equal(value, value): ', function(){
         result = newQueue.length();
-        assert.deepEqual(result, 1);
+        assert.deepEqual(result, 2);
     })
 
     it('Check the isEmpty method using : assert.equal(value, value): ', function(){
@@ -35,8 +36,8 @@ describe('Check Queue Methods: ', function(){
     })
 
     it('Check the search method using : assert.equal(value, value): ', function(){
-        result = newQueue.search('Alejandro');
-        assert.deepEqual(result, 0);
+        result = newQueue.search('Juárez');
+        assert.deepEqual(result, 1);
     })
 
 })
