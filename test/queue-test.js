@@ -5,12 +5,38 @@ const { Queue } = require("../classes/queue");
 
 let newQueue = new Queue();
 
-describe('Testing Queue Class: ', function(){
-    describe('Check Offer Method: ', function(){
-        it('Check the queue values using : assert.equal(value, value): ', function(){
-            newQueue.offer("Noé");
-            result = newQueue.queue;
-            assert.deepEqual(result, ['Noé']);
-        })
+describe('Check Queue Methods: ', function(){
+    it('Check the Offer method using : assert.equal(value, value): ', function(){
+        newQueue.offer("Noé");
+        newQueue.offer("Alejandro");
+        result = newQueue.queue;
+        assert.deepEqual(result, ['Noé', 'Alejandro']);
     })
+
+    it('Check the Poll method using : assert.equal(value, value): ', function(){
+        newQueue.poll();
+        result = newQueue.queue;
+        assert.deepEqual(result, ['Alejandro']);
+    })
+
+    it('Check the Peek method using : assert.equal(value, value): ', function(){
+        result = newQueue.peek();
+        assert.deepEqual(result, 'Alejandro');
+    })
+
+    it('Check the Length method using : assert.equal(value, value): ', function(){
+        result = newQueue.length();
+        assert.deepEqual(result, 1);
+    })
+
+    it('Check the isEmpty method using : assert.equal(value, value): ', function(){
+        result = newQueue.isEmpty();
+        assert.deepEqual(result, false);
+    })
+
+    it('Check the search method using : assert.equal(value, value): ', function(){
+        result = newQueue.search('Alejandro');
+        assert.deepEqual(result, 0);
+    })
+
 })
